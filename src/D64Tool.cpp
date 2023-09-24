@@ -410,8 +410,7 @@ void ConvertSectors(int lump)
     short light2 = 0;
     short special = 0;
     short tag = 0;
-    unsigned char flags = 0;//flag
-    unsigned char vol = 0;//flag
+    short flags = 0;
 
     /*unsigned short color1;
     unsigned short color2;
@@ -594,7 +593,7 @@ void info()
     setcolor(0x07);printf("#########################\n");
     printf("     #                       D64 TOOL                         #\n");
     printf("     #             CREADO POR ERICK VASQUEZ GARCIA            #\n");
-    printf("     #                   VERSION 1.0 (2023)                   #\n");
+    printf("     #                   VERSION 1.1 (2023)                   #\n");
     printf("     #                                                        #\n");
     printf("     # MODO DE USO:                                           #\n");
     printf("     # (-D64_EX_TO_N64) Convierte Mapa Doom64 EX a Doom64 N64 #\n");
