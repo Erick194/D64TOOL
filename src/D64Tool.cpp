@@ -493,42 +493,6 @@ void ConvertSectors(int lump)
     offcnt+=olen;
 }
 
-void ConvertVertexes(int lump)
-{
-    PrintfPorcentaje(lump, numlumps - 1, true, getcoord.Y, "Convirtiendo Mapa Formato Doom 64 EX a Doom 64 N64...\t", lump);
-          
-    int size = 0;
-    short x = 0;
-    short y = 0;
-    int X = 0;
-    int Y = 0;
-	 
-    int numvertex = 0;
-    fseek(mapin,lumpinfo[lump].filepos,SEEK_SET);
-
-    //setnew filepos
-    lumpinfo[lump].filepos = offcnt;
-    numvertex = lumpinfo[lump].size/4;
-     
-    for(int i = 0; i <numvertex; i++)
-    {
-        fread (&x,sizeof(short),1,mapin);
-        fread (&y,sizeof(short),1,mapin);
-            
-        X = x << 16;
-        Y = y << 16;
-	        
-        fwrite (&X,sizeof(unsigned int), 1 ,mapout);
-        fwrite (&Y,sizeof(unsigned int), 1 ,mapout);
-        size += 8;
-    }
-     
-    lumpinfo[lump].size = size;
-     
-    offcnt+=size;
-}
-
-
 void Read_MapWad(char *name)
 {
     int i;
